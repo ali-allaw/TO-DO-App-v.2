@@ -1,0 +1,168 @@
+// bootstrap icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+// variables
+:root {
+    --Bright-Blue: hsl(220, 98%, 61%);
+    --Check-Background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+    --Light-Grayish-Blue: hsl(234, 39%, 85%);
+    --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+    --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+    --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+    --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+body {
+    font-size: 18px;
+    background-color: var(--Very-Dark-Blue) !important;
+    .page > img{
+        position: absolute;
+        width: 100%;
+        z-index:-1;
+    }
+    .content {
+        z-index: 100;
+        .box {
+            margin-top: 100px;
+            width: 35%;
+            .header {
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                letter-spacing: 5px;
+            }
+            .body {
+                form {
+                    position: relative;
+                }
+                ul {
+                    margin-top: 30px;
+                    .shadow {
+                        color: var(--Light-Grayish-Blue);
+                        border-bottom: 1px solid var(--Very-Dark-Desaturated-Blue);
+                        padding: 20px 30px;
+                        background-color: var(--Very-Dark-Blue);
+                        width: 100%;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        column-gap: 20px;
+                        position: relative;
+                        
+                        .false-i {
+                            cursor: pointer;
+                            position: absolute;
+                            right: 30px;
+                            display: none;
+                        }
+                        .check-i {
+                            transform: translate(9px, 9px);
+                            display: none;
+                            z-index: 100;
+                        }
+                        &:first-child {    
+                            border-top-left-radius: 6px;
+                            border-top-right-radius: 6px;
+                        }
+                        p {
+                            font-size: 20px;
+                        }
+                        .check-li {
+                            position: relative !important;                  
+                            &:hover {
+                                border: 1px solid var(--Bright-Blue);
+                            }
+                        }
+                        &:hover {
+                            .false-i {
+                                display: block;                            
+                            }
+                            color: var(--Light-Grayish-Blue-hover);
+                        }
+                    }
+                }
+            }
+            .foot {
+                justify-content: space-between;
+                align-items: center;
+                background-color: var(--Very-Dark-Blue);
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                padding: 20px 30px 0px;
+                .center, .right {
+                    li, p {
+                        transition: .3s;
+                        &:hover {
+                            color: var(--Light-Grayish-Blue-hover);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// my framework
+.active-span, .check-li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--Very-Dark-Desaturated-Blue);
+    background-color: transparent;
+    cursor: pointer;
+    &:hover::after{
+        border: 1px solid var(--Check-Background);
+    }
+}
+.active-span {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.check-li {
+    transform: translateY(-6px);
+}
+
+.designed-input {
+    background-color: var(--Very-Dark-Blue);
+    border: none;
+    width: 100%;
+    height: 70px;
+    border-radius: 6px;
+    caret-color: var(--Bright-Blue);
+    padding-left: 80px;
+    &:focus {
+        outline: none;
+    }
+    &:valid {
+        color:var(--Light-Grayish-Blue);
+        font-size: 20px;
+    }
+}
+
+.active-li-center {
+    color: var(--Bright-Blue);
+}
+
+.active-body-li {
+    .check-i {
+        display: block;
+    }
+    p {
+        position: relative;
+        color: var(--Dark-Grayish-Blue);
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: var(--Dark-Grayish-Blue);
+            top:55%;
+            left: 0px;
+        }
+    }
+}
