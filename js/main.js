@@ -101,14 +101,7 @@ footAll.addEventListener("click", () => {
 footClearCompleted.onclick = () => {
     bodyLis.forEach(li => {
         if (li.classList.contains("active-body-li")) {
-            bodyLis.forEach(li => {
-                li.classList.remove("active-body-li");
-                bodyLisActiveArr = [];
-                bodyLisSpans.forEach(span => {
-                    span.style.background = "transparent";
-                    span.firstChild.style.display = "none";
-                });
-            });
+            li.remove();
         }
     })
     
